@@ -109,9 +109,9 @@ h3
 
 .ligne {
     position: absolute;
-    top: 730px !important; /* Distance par rapport au haut de la page */
-    left: 0px !important; /* Distance par rapport à la gauche de la page */
-    width: 1536px;
+    top: 110% !important; /* Distance par rapport au haut de la page */
+    left: 0% !important; /* Distance par rapport à la gauche de la page */
+    width: 100%;
     height: 4px;
     background-color: #f70000;
     opacity: 1; /* Initiallement invisible */
@@ -124,16 +124,16 @@ h3
 
 .classement{
     position: absolute;
-    top : 730px ;
-    left : 700px ; 
+    top : 110% ;
+    left : 44% ; 
     color :#fff;
     font-family: 'Bebas Neue', sans-serif;
 }
 
 .top1{
 	position: absolute;
-	top : 830px;
-	left: 400px;
+	top : 120%;
+	left: 30%;
 	color: #fff;
 	font-family: 'Bebas Neue', sans-serif;
 	
