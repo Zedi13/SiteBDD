@@ -1,20 +1,3 @@
-function changeTab(tabName) {
-    var tabs = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => {
-        tab.style.display = 'none';
-    });
-
-    var selectedTab = document.getElementById(tabName);
-    if (selectedTab) {
-        selectedTab.style.display = 'block';
-    }
-
-
-
-    // Rafraîchir la page
-    window.location.reload();
-}
-
 
 function loadMovies() {
     var genre = document.getElementById('genre').value;
@@ -41,10 +24,14 @@ function loadMovies() {
 }
 
 
+function redirectToFilm() {
+    window.location.href = 'http://localhost/netfloux/site.html';
+}
 
 function redirectToAjoutFilm() {
     window.location.href = 'http://localhost/AjoutFilm/site.html';
 }
-function redirectToSeries() {
-    window.location.href = 'http://localhost/serie/site.html';
+
+function redirectToAccueil() {
+    window.location.href = 'index.html';
 }

@@ -32,7 +32,7 @@ if ($genre === '') {
 $genre = mysqli_real_escape_string($conn, $genre);
 
 // Construire la requête SQL en fonction de la présence du titre et du genre
-$sql = "SELECT * FROM films WHERE 1";
+$sql = "SELECT * FROM series WHERE 1";
 
 // Ajouter la condition pour le genre seulement s'il est différent de "tous"
 if ($genre !== 'tous') {
@@ -46,7 +46,7 @@ if (isset($_POST['titre']) && !empty($titre)) {
 }
 
 // Ajouter les conditions pour le tri par note et/ou par durée
-if ($tri === 'note' || $tri === 'duree') {
+if ($tri === 'note' || $tri === 'saisons') {
     $sql .= " ORDER BY $tri $ordre";
 }
 
@@ -60,21 +60,21 @@ if ($result === false) {
         // Afficher les résultats sous forme de paragraphes
         while ($row = $result->fetch_assoc()) {
             // Récupérer les informations du film
-            $titreFilm = isset($row['titre']) ? $row['titre'] : 'Titre non disponible';
-            $genreFilm = isset($row['genre']) ? $row['genre'] : 'Genre non disponible';
+            $titreSaisons = isset($row['titre']) ? $row['titre'] : 'Titre non disponible';
+            $genreSaisons = isset($row['genre']) ? $row['genre'] : 'Genre non disponible';
             $realisateur = isset($row['realisateur']) ? $row['realisateur'] : 'Réalisateur non disponible';
             $dateSortie = isset($row['dateSortie']) ? $row['dateSortie'] : 'Date de sortie non disponible';
-            $duree = isset($row['duree']) ? $row['duree'] : 'Durée non disponible';
+            $saisons = isset($row['saisons']) ? $row['saisons'] : 'Durée non disponible';
             $note = isset($row['note']) ? $row['note'] : 'Note non disponible';
             $description = isset($row['description']) ? $row['description'] : 'Description non disponible';
 
             // Afficher les informations du film avec des sauts de ligne
             echo "<p>";
-            echo "Titre: " . $titreFilm . "<br>";
-            echo "Genre: " . $genreFilm . "<br>";
+            echo "Titre: " . $titreSaisons . "<br>";
+            echo "Genre: " . $genreSaisons . "<br>";
             echo "Réalisateur: " . $realisateur . "<br>";
             echo "Date de sortie: " . $dateSortie . "<br>";
-            echo "Durée: " . $duree . " Minutes<br>";
+            echo "saison(s): " . $saisons . " Minutes<br>";
             echo "Note: " . $note . "<br>";
             echo "Description: " . $description;
             echo "</p><hr>"; // Ajoute une ligne horizontale pour séparer les films
